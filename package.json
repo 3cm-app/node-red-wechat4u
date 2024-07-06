@@ -1,0 +1,39 @@
+{
+  "name": "@3cm/node-red-contrib-wechat4u",
+  "version": "0.0.1",
+  "description": "Node red nodes for wechat (weixin) web (based on wechat4u)",
+  "scripts": {
+    "start": "npx node-red --safe",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/3cm-app/node-red-contrib-wechat4u.git"
+  },
+  "keywords": [
+    "wechat",
+    "weixin",
+    "wechat4u",
+    "node-red"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/3cm-app/node-red-contrib-wechat4u/issues"
+  },
+  "homepage": "https://github.com/3cm-app/node-red-contrib-wechat4u#readme",
+  "node-red": {
+    "version": ">=2.0.0",
+    "nodes": {
+      "wechat4u": "nodes/wechat4u/index.js",
+      "wechat4u-uuid": "nodes/wechat4u-uuid/index.js"
+    }
+  },
+  "devDependencies": {
+    "node-red": "^4.0.2"
+  },
+  "dependencies": {
+    "qrcode-terminal": "^0.12.0",
+    "wechat4u": "^0.7.14"
+  }
+}

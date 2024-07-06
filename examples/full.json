@@ -1,0 +1,303 @@
+[
+    {
+        "id": "ac246fcfa8b53123",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": "",
+        "env": []
+    },
+    {
+        "id": "1b881ea7a0d12b3e",
+        "type": "wechat4u",
+        "z": "ac246fcfa8b53123",
+        "name": "",
+        "x": 440,
+        "y": 240,
+        "wires": [
+            [
+                "4a0cfaf050293ffd"
+            ],
+            [
+                "4a0cfaf050293ffd",
+                "57cedf3be1bf1de6"
+            ],
+            [
+                "4a0cfaf050293ffd"
+            ]
+        ]
+    },
+    {
+        "id": "4a0cfaf050293ffd",
+        "type": "debug",
+        "z": "ac246fcfa8b53123",
+        "name": "debug 1",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 620,
+        "y": 300,
+        "wires": []
+    },
+    {
+        "id": "57cedf3be1bf1de6",
+        "type": "wechat4u-uuid",
+        "z": "ac246fcfa8b53123",
+        "name": "",
+        "x": 630,
+        "y": 240,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "de5e1c498c89296c",
+        "type": "function",
+        "z": "ac246fcfa8b53123",
+        "name": "revokeMsg",
+        "func": "const ToUserName = 'filehelper'\nmsg.payload = function (bot) {\n    bot.sendMsg('revokeMsg', ToUserName)\n     .then(res => {\n       return bot.revokeMsg(res.MsgID, ToUserName)\n     })\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 250,
+        "y": 340,
+        "wires": [
+            [
+                "1b881ea7a0d12b3e"
+            ]
+        ]
+    },
+    {
+        "id": "52882d0707de23e8",
+        "type": "function",
+        "z": "ac246fcfa8b53123",
+        "name": "sendMsg",
+        "func": "const ToUserName = 'filehelper'\nmsg.payload = ['sendMsg', ToUserName]\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 240,
+        "y": 160,
+        "wires": [
+            [
+                "1b881ea7a0d12b3e"
+            ]
+        ]
+    },
+    {
+        "id": "909187a609d0d112",
+        "type": "function",
+        "z": "ac246fcfa8b53123",
+        "name": "sendMsg fn",
+        "func": "const ToUserName = 'filehelper'\nmsg.payload = function(bot) {\n    bot.sendMsg('sendMsg fn', ToUserName)\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 250,
+        "y": 220,
+        "wires": [
+            [
+                "1b881ea7a0d12b3e"
+            ]
+        ]
+    },
+    {
+        "id": "cdb24bdb015d4274",
+        "type": "function",
+        "z": "ac246fcfa8b53123",
+        "name": "emoticonMd5",
+        "func": "const ToUserName = 'filehelper'\nmsg.payload = function(bot) {\n    bot.sendMsg({\n        emoticonMd5: '00c801cdf69127550d93ca52c3f853ff'\n    }, ToUserName)\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 260,
+        "y": 280,
+        "wires": [
+            [
+                "1b881ea7a0d12b3e"
+            ]
+        ]
+    },
+    {
+        "id": "c16be8a9377b2fe2",
+        "type": "inject",
+        "z": "ac246fcfa8b53123",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 160,
+        "wires": [
+            [
+                "52882d0707de23e8"
+            ]
+        ]
+    },
+    {
+        "id": "a89852ced642545e",
+        "type": "inject",
+        "z": "ac246fcfa8b53123",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 220,
+        "wires": [
+            [
+                "909187a609d0d112"
+            ]
+        ]
+    },
+    {
+        "id": "6d5252c317affb04",
+        "type": "inject",
+        "z": "ac246fcfa8b53123",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 280,
+        "wires": [
+            [
+                "cdb24bdb015d4274"
+            ]
+        ]
+    },
+    {
+        "id": "07c1f022b10338a1",
+        "type": "inject",
+        "z": "ac246fcfa8b53123",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 340,
+        "wires": [
+            [
+                "de5e1c498c89296c"
+            ]
+        ]
+    },
+    {
+        "id": "f91d8c37b4612b4f",
+        "type": "function",
+        "z": "ac246fcfa8b53123",
+        "name": "restart",
+        "func": "msg.payload = function(bot) {\n    bot.restart()\n}\nreturn msg;",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 230,
+        "y": 400,
+        "wires": [
+            [
+                "1b881ea7a0d12b3e"
+            ]
+        ]
+    },
+    {
+        "id": "bac8876b209b4829",
+        "type": "inject",
+        "z": "ac246fcfa8b53123",
+        "name": "",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "",
+        "crontab": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "topic": "",
+        "payload": "",
+        "payloadType": "date",
+        "x": 100,
+        "y": 400,
+        "wires": [
+            [
+                "f91d8c37b4612b4f"
+            ]
+        ]
+    }
+]

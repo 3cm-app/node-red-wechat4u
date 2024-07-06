@@ -1,0 +1,26 @@
+<script type="text/javascript">
+  RED.nodes.registerType("wechat4u", {
+    category: "wechat",
+    paletteLabel: "Daemon",
+    color: "#5CC928",
+    icon: "font-awesome/fa-weixin",
+    defaults: {
+      name: { value: "" },
+    },
+    label: function () {
+      return this.name || "Daemon"
+    },
+    inputs: 1,
+    outputs: 3,
+    outputLabels: ["message", "uuid", "botData"],
+  })
+</script>
+
+<script type="text/html" data-template-name="wechat4u">
+  <div class="form-row">
+    <label for="node-input-name"
+      ><i class="fa fa-tag"></i><span>Name</span></label
+    >
+    <input type="text" id="node-input-name" placeholder="name" />
+  </div>
+</script>
