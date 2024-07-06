@@ -1,0 +1,26 @@
+<script type="text/javascript">
+  RED.nodes.registerType("wechat4u-uuid", {
+    category: "wechat",
+    paletteLabel: "uuid Debug",
+    color: "#5CC928",
+    icon: "font-awesome/fa-bug",
+    defaults: {
+      name: { value: "" },
+    },
+    label: function () {
+      return this.name || "uuid Debug"
+    },
+    inputs: 1,
+    outputs: 1,
+  })
+</script>
+
+<script type="text/html" data-template-name="wechat4u-uuid">
+  <div class="form-row">
+    <label for="node-input-name"
+      ><i class="fa fa-tag"></i><span>Name</span></label
+    >
+    <input type="text" id="node-input-name" placeholder="name" />
+  </div>
+  <p>Please open debug panel to scan the login qrcode...</p>
+</script>
