@@ -1,6 +1,6 @@
 {
   "name": "@3cm/node-red-wechat4u",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Node red nodes for wechat (weixin) web (based on wechat4u)",
   "scripts": {
     "start": "npx node-red --safe",
