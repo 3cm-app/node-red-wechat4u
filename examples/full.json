@@ -12,8 +12,8 @@
         "type": "wechat4u",
         "z": "ac246fcfa8b53123",
         "name": "",
-        "x": 440,
-        "y": 240,
+        "x": 530,
+        "y": 140,
         "wires": [
             [
                 "4a0cfaf050293ffd"
@@ -40,8 +40,8 @@
         "targetType": "full",
         "statusVal": "",
         "statusType": "auto",
-        "x": 620,
-        "y": 300,
+        "x": 720,
+        "y": 180,
         "wires": []
     },
     {
@@ -49,8 +49,8 @@
         "type": "wechat4u-uuid",
         "z": "ac246fcfa8b53123",
         "name": "",
-        "x": 630,
-        "y": 240,
+        "x": 760,
+        "y": 140,
         "wires": [
             []
         ]
@@ -60,15 +60,15 @@
         "type": "function",
         "z": "ac246fcfa8b53123",
         "name": "revokeMsg",
-        "func": "const ToUserName = 'filehelper'\nmsg.payload = function (bot) {\n    bot.sendMsg('revokeMsg', ToUserName)\n     .then(res => {\n       return bot.revokeMsg(res.MsgID, ToUserName)\n     })\n}\nreturn msg;",
+        "func": "const ToUserName = 'filehelper'\nmsg.payload = function (bot) {\n    return bot.sendMsg('revokeMsg', ToUserName)\n     .then(res => {\n       return bot.revokeMsg(res.MsgID, ToUserName)\n     })\n}\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 250,
-        "y": 340,
+        "x": 290,
+        "y": 240,
         "wires": [
             [
                 "1b881ea7a0d12b3e"
@@ -87,8 +87,8 @@
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 240,
-        "y": 160,
+        "x": 280,
+        "y": 60,
         "wires": [
             [
                 "1b881ea7a0d12b3e"
@@ -100,15 +100,15 @@
         "type": "function",
         "z": "ac246fcfa8b53123",
         "name": "sendMsg fn",
-        "func": "const ToUserName = 'filehelper'\nmsg.payload = function(bot) {\n    bot.sendMsg('sendMsg fn', ToUserName)\n}\nreturn msg;",
+        "func": "const ToUserName = 'filehelper'\nmsg.payload = function(bot) {\n    return bot.sendMsg('sendMsg fn', ToUserName)\n}\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 250,
-        "y": 220,
+        "x": 290,
+        "y": 120,
         "wires": [
             [
                 "1b881ea7a0d12b3e"
@@ -120,15 +120,15 @@
         "type": "function",
         "z": "ac246fcfa8b53123",
         "name": "emoticonMd5",
-        "func": "const ToUserName = 'filehelper'\nmsg.payload = function(bot) {\n    bot.sendMsg({\n        emoticonMd5: '00c801cdf69127550d93ca52c3f853ff'\n    }, ToUserName)\n}\nreturn msg;",
+        "func": "const ToUserName = 'filehelper'\nmsg.payload = function(bot) {\n    return bot.sendMsg({\n        emoticonMd5: '00c801cdf69127550d93ca52c3f853ff'\n    }, ToUserName)\n}\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 260,
-        "y": 280,
+        "x": 300,
+        "y": 180,
         "wires": [
             [
                 "1b881ea7a0d12b3e"
@@ -156,8 +156,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 100,
-        "y": 160,
+        "x": 140,
+        "y": 60,
         "wires": [
             [
                 "52882d0707de23e8"
@@ -185,8 +185,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 100,
-        "y": 220,
+        "x": 140,
+        "y": 120,
         "wires": [
             [
                 "909187a609d0d112"
@@ -214,8 +214,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 100,
-        "y": 280,
+        "x": 140,
+        "y": 180,
         "wires": [
             [
                 "cdb24bdb015d4274"
@@ -243,8 +243,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 100,
-        "y": 340,
+        "x": 140,
+        "y": 240,
         "wires": [
             [
                 "de5e1c498c89296c"
@@ -255,16 +255,16 @@
         "id": "f91d8c37b4612b4f",
         "type": "function",
         "z": "ac246fcfa8b53123",
-        "name": "restart",
-        "func": "msg.payload = function(bot) {\n    bot.restart()\n}\nreturn msg;",
+        "name": "restart bot",
+        "func": "msg.payload = function(bot) {\n    return bot.restart()\n}\nreturn msg;",
         "outputs": 1,
         "timeout": 0,
         "noerr": 0,
         "initialize": "",
         "finalize": "",
         "libs": [],
-        "x": 230,
-        "y": 400,
+        "x": 280,
+        "y": 300,
         "wires": [
             [
                 "1b881ea7a0d12b3e"
@@ -292,8 +292,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 100,
-        "y": 400,
+        "x": 140,
+        "y": 300,
         "wires": [
             [
                 "f91d8c37b4612b4f"
