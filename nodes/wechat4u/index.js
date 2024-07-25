@@ -1,5 +1,5 @@
-// const Wechat = require("wechat4u")
-const Wechat = require('wechat4u/lib/core')
+const Wechat = require("wechat4u")
+// const WechatCore = require('wechat4u/lib/core.js')
 
 // https://github.com/nodeWechat/wechat4u/blob/master/run-core.js
 module.exports = async function (RED) {
@@ -48,22 +48,34 @@ module.exports = async function (RED) {
       }
 
       this.on("close", async (removed, done) => {
-        if (removed) {
-          await bot.stop()
+        try {
+          if (removed) {
+            await bot.stop()
+          }
+        } catch (e) {
+          this.error(e)
+        } finally {
+          if (done) {
+            done()
+          }
         }
-        done()
       })
 
       this.on("input", async (msg, send, done) => {
-        if (typeof msg.payload === "function") {
-          await msg.payload(bot)
-        } else if (Array.isArray(msg.payload)) {
-          await bot.sendMsg(...msg.payload)
-        } else {
-          await bot.sendMsg(msg.payload, 'filehelper')
-        }
-        if (done) {
-          done()
+        try {
+          if (typeof msg.payload === "function") {
+            await msg.payload(bot)
+          } else if (Array.isArray(msg.payload)) {
+            await bot.sendMsg(...msg.payload)
+          } else {
+            await bot.sendMsg(msg.payload, 'filehelper')
+          }
+        } catch (e) {
+          this.error(e)
+        } finally {
+          if (done) {
+            done()
+          }
         }
       })
 

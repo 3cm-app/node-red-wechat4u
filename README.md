@@ -9,6 +9,10 @@ npm i @3cm/node-red-wechat4u # install to local: ~/.node-red
 
 See [wechat4u](https://github.com/nodeWechat/wechat4u) for api details
 
+## Error: Service unavailable for this account
+
+According to: `https://github.com/nodeWechat/wechat4u?tab=readme-ov-file#changes`, probably 微信实名认证 first
+
 ## Dev memo
 
 ```bash
