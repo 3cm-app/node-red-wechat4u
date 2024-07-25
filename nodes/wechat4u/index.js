@@ -1,4 +1,5 @@
-const Wechat = require("wechat4u")
+// const Wechat = require("wechat4u")
+const Wechat = require('wechat4u/lib/core')
 
 // https://github.com/nodeWechat/wechat4u/blob/master/run-core.js
 module.exports = async function (RED) {
